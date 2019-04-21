@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import ShoppingList from './shoppingList'
 import ItemsList from './ItemsList'
-import AddItem from './addItem'
+
 
 class App extends React.Component {
   state = {
@@ -35,8 +35,8 @@ class App extends React.Component {
     const items = this.state.items;
     return (
       <div className="App">
-        <ShoppingList value = {value}/>
-        <AddItem onAddItem={this.handleAddItem}/>
+        <ShoppingList value = {value} onAddItem={this.handleAddItem}/>
+        
         <ItemsList items = {items} items = {this.state.items}/>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />

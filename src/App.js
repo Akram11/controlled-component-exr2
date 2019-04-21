@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ShoppingList from './shoppingList'
 
 class App extends React.Component {
   state = {
@@ -32,12 +33,15 @@ class App extends React.Component {
   };
 
   render() {
+    const value = this.state.value;
     return (
       <div className="App">
+        <ShoppingList value = {value} onClick = {this.addItem} />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
+        ///////////////////
         <h2>Shopping List</h2>
         <form onSubmit={this.addItem}>
           <input

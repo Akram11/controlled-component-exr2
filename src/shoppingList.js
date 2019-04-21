@@ -12,7 +12,7 @@ class ShoppingList extends React.Component{
             
             <h1>this is a Shopping list</h1>
             <AddItem onAddItem ={this.props.onAddItem}/>
-            <DeleteItem/>
+          
             
             </div>
         )

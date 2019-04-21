@@ -1,17 +1,16 @@
-import React, {Component}  from 'react'
+import React from 'react'
 
-class DeleteItem extends React.Component{
-render(){
-
-
-    return(
-        <button>
+const DeleteItem = props => {
+    const handleDeleteLastItem = event => {
+      props.onDeleteLastItem();
+    };
+  
+    return (
+      <button onClick={handleDeleteLastItem} disabled={props.buttonDisabled}>
         Delete Last Item
-        </button>
-    )
-}
-
-}
+      </button>
+    );
+  };
 
 
 export default DeleteItem

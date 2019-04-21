@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import ShoppingList from './shoppingList'
 import ItemsList from './ItemsList'
+import DeleteItem from './Deleteitem'
 
 
 class App extends React.Component {
@@ -18,7 +19,7 @@ class App extends React.Component {
     this.setState(prevState => ({ items: [...prevState.items, item] }));
   };
 
-  deleteLastItem = event => {
+  handleDeleteLastItem = item => {
     this.setState(prevState => ({ items: this.state.items.slice(0, -1) }));
   };
 
@@ -36,7 +37,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <ShoppingList value = {value} onAddItem={this.handleAddItem}/>
-        
+        <DeleteItem onDeleteLastItem = {this.handleDeleteLastItem}/>
+
         <ItemsList items = {items} items = {this.state.items}/>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
